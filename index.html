@@ -864,7 +864,6 @@
                   <span>Ketua Pelaksana</span>
                   <br /><br />
                   <div class="social">
-                  
                     <a href=""><i class="ri-facebook-fill"></i></a>
                     <a href=""><i class="ri-instagram-fill"></i></a>
                     <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
@@ -911,7 +910,7 @@
                 </div>
                 <div class="member-info">
                   <h4>Faizah Yunita Putri</h4>
-                  <span>Sekertaris</span>
+                  <span>Sekretaris</span>
                   <p>
                     <a
                       href="https://www.instagram.com/p/CzlwI_tL2yy/?img_index=3"
@@ -1454,18 +1453,28 @@
             </div>
 
             <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-              <form
-                action="forms/contact.php"
-                method="post"
-                role="form"
-                class="php-email-form"
-              >
+              <form class="php-email-form" name="form-pesan">
                 <div class="row">
+                  <div
+                    class="alert alert-success alert-dismissible fade show d-none my-alert"
+                    role="alert"
+                  >
+                    <strong>Hello Beforians!</strong> Pesan Anda telah kami
+                    terima, terima kasih partisipasinya...
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="alert"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <br />
+                  <br />
                   <div class="form-group col-md-6">
                     <label for="name">Your Name</label>
                     <input
                       type="text"
-                      name="name"
+                      name="nama"
                       class="form-control"
                       id="name"
                       required
@@ -1476,18 +1485,18 @@
                     <input
                       type="email"
                       class="form-control"
-                      name="email"
-                      id="email"
+                      name="gmail"
+                      id="gmail"
                       required
                     />
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="name">Subject</label>
+                  <label for="name">Asal Sekolah</label>
                   <input
                     type="text"
                     class="form-control"
-                    name="subject"
+                    name="asalsekolah"
                     id="subject"
                     required
                   />
@@ -1496,20 +1505,26 @@
                   <label for="name">Message</label>
                   <textarea
                     class="form-control"
-                    name="message"
+                    name="pesan"
                     rows="10"
                     required
                   ></textarea>
                 </div>
-                <div class="my-3">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">
-                    Your message has been sent. Thank you!
-                  </div>
-                </div>
                 <div class="text-center">
-                  <button type="submit">Send Message</button>
+                  <button type="submit" class="btn btn-primary btn-kirim">
+                    Send Message
+                  </button>
+                  <button
+                    class="btn btn-primary btn-loading d-none"
+                    type="submit"
+                    disabled
+                  >
+                    <span
+                      class="spinner-grow spinner-grow-sm"
+                      aria-hidden="true"
+                    ></span>
+                    <span role="status">Loading...</span>
+                  </button>
                 </div>
               </form>
             </div>
@@ -1528,10 +1543,31 @@
             <div class="col-lg-6">
               <h4>Dream College</h4>
               <p>Tulis peguruan tinggi impianmu pada box di bawah ini :</p>
-              <form action="" method="post">
-                <input type="textarea" style="width: 100%" name="email" /><input
+              <div
+                class="alert alert-success alert-dismissible fade show d-none my-alert2"
+                role="alert"
+              >
+                <strong>Wow Keren Beforian !</strong>
+                Semoga impianmu tercapai ya, Aminn...
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="alert"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <form name="form-univ" method="post">
+                <input
+                  type="text"
+                  style="width: 100%"
+                  name="namauniv"
+                  required
+                />
+                <input class="btn-kirim2" type="submit" value="Kirim" />
+                <input
+                  class="btn btn-primary btn-loading2 d-none"
                   type="submit"
-                  value="Send"
+                  value="Loading..."
                 />
               </form>
             </div>
@@ -1553,57 +1589,9 @@
               </p>
             </div>
 
-            <div class="col-lg-3 col-md-6 footer-links">
-              <h4>Pendaftaran</h4>
-              <ul>
-                <li>
-                  <i class="bx bx-chevron-right"></i>
-                  <a href="#">BEF Trophy X Live Class</a>
-                </li>
-                <li>
-                  <i class="bx bx-chevron-right"></i>
-                  <a href="#">BEF In Magical</a>
-                </li>
-                <li>
-                  <i class="bx bx-chevron-right"></i>
-                  <a href="#">The Art of Freedom</a>
-                </li>
-                <li>
-                  <i class="bx bx-chevron-right"></i> <a href="#">Rangking 1</a>
-                </li>
-                <li>
-                  <i class="bx bx-chevron-right"></i>
-                  <a href="#">Essay</a>
-                </li>
-              </ul>
-            </div>
+            <div class="col-lg-3 col-md-6 footer-links"></div>
 
-            <div class="col-lg-3 col-md-6 footer-links">
-              <br />
-              <br />
-              <ul>
-                <li>
-                  <i class="bx bx-chevron-right"></i>
-                  <a href="#">LCC</a>
-                </li>
-                <li>
-                  <i class="bx bx-chevron-right"></i>
-                  <a href="#">KTI</a>
-                </li>
-                <li>
-                  <i class="bx bx-chevron-right"></i>
-                  <a href="#">Open Stand</a>
-                </li>
-                <li>
-                  <i class="bx bx-chevron-right"></i>
-                  <a href="#">Open Donasi Buku</a>
-                </li>
-                <li>
-                  <i class="bx bx-chevron-right"></i>
-                  <a href="#">Workshop Mental Care</a>
-                </li>
-              </ul>
-            </div>
+            <div class="col-lg-3 col-md-6 footer-links"></div>
 
             <div class="col-lg-3 col-md-6 footer-links">
               <h4>Our Social Networks</h4>
@@ -1668,5 +1656,66 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <!-- Template Google sheets -->
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbyUvGXjxn5_lCRltN8df8hoMQTWnbvBUMxmniFFBz3LeS8rXiVY4Io4PULcxFdguJG4/exec";
+      const form = document.forms["form-pesan"];
+      const btnKirim = document.querySelector(".btn-kirim");
+      const btnLoading = document.querySelector(".btn-loading");
+      const myAlert = document.querySelector(".my-alert");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        //ketika tombol submit diklik
+        //tampilkan tombol loading, hilangkan tombol kirim
+        btnLoading.classList.toggle("d-none");
+        btnKirim.classList.toggle("d-none");
+
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            //tampilkan tombol kirim, hilangkan tombol loading
+            btnLoading.classList.toggle("d-none");
+            btnKirim.classList.toggle("d-none");
+            //tampilkan allert
+            myAlert.classList.toggle("d-none");
+            //reset form
+            form.reset();
+            console.log("Success!", response);
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+
+    <script>
+      const scriptURL2 =
+        "https://script.google.com/macros/s/AKfycbzNyJLIcw-Tt5RM5FjwrS6CA0HMNMkIAk6ab89JInuuQHKBmSQr3kqOCOneLEyo6iJ0/exec";
+      const form2 = document.forms["form-univ"];
+      const btnKirim2 = document.querySelector(".btn-kirim2");
+      const btnLoading2 = document.querySelector(".btn-loading2");
+      const myAlert2 = document.querySelector(".my-alert2");
+
+      form2.addEventListener("submit", (e) => {
+        e.preventDefault();
+        //ketika tombol submit diklik
+        //tampilkan tombol loading, hilangkan tombol kirim
+        btnLoading2.classList.toggle("d-none");
+        btnKirim2.classList.toggle("d-none");
+
+        fetch(scriptURL2, { method: "POST", body: new FormData(form2) })
+          .then((response) => {
+            //tampilkan tombol kirim, hilangkan tombol loading
+            btnLoading2.classList.toggle("d-none");
+            btnKirim2.classList.toggle("d-none");
+            //tampilkan allert
+            myAlert2.classList.toggle("d-none");
+            //reset form2
+            form2.reset();
+            console.log("Success!", response);
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
   </body>
 </html>

@@ -75,7 +75,6 @@ form[name="form-univ"] input[name="namauniv"] {
   border: none;
   outline: none;
 }
-
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -595,6 +594,39 @@ section {
   .clients img {
     max-width: 40%;
   }
+}
+
+.mySlides {
+  display: none;
+}
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+.w3-button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.w3-button:hover {
+  background-color: rgba(0, 0, 0, 1);
+}
+.w3-display-left {
+  left: 0;
+}
+.w3-display-right {
+  right: 0;
 }
 
 /*--------------------------------------------------------------

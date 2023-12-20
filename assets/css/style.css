@@ -124,13 +124,15 @@ form[name="form-univ"] input[name="namauniv"] {
 
 #header .logo {
   font-size: 30px;
+  font-family: Geneva;
+  font-weight:bolder;
   margin: 0;
   padding: 0;
   line-height: 1;
   font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
-  background: -webkit-linear-gradient(left, #5701ad, #cdba14);
+  background: -webkit-linear-gradient(left, #8103ff, #b19f00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

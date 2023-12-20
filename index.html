@@ -884,7 +884,7 @@
               </div>
               <div class="portfolio-info">
                 <h4>Lomba Karya Tulis Ilmiah</h4>
-                <p>Memancarkan Sinar Garuda...</p>
+                <p>Memancarkan Sinar Garuda Melalui Aksi...</p>
                 <a
                   href="assets/img/lomba/Poster LKTI.png"
                   data-gallery="portfolioGallery"
@@ -1135,7 +1135,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="name">Asal Sekolah atau Universitas1</label>
+                  <label for="name">Asal Sekolah atau Universitas</label>
                   <input
                     type="text"
                     class="form-control"
@@ -1299,66 +1299,5 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-
-    <!-- Template Google sheets -->
-    <script>
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbyUvGXjxn5_lCRltN8df8hoMQTWnbvBUMxmniFFBz3LeS8rXiVY4Io4PULcxFdguJG4/exec";
-      const form = document.forms["form-pesan"];
-      const btnKirim = document.querySelector(".btn-kirim");
-      const btnLoading = document.querySelector(".btn-loading");
-      const myAlert = document.querySelector(".my-alert");
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        //ketika tombol submit diklik
-        //tampilkan tombol loading, hilangkan tombol kirim
-        btnLoading.classList.toggle("d-none");
-        btnKirim.classList.toggle("d-none");
-
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => {
-            //tampilkan tombol kirim, hilangkan tombol loading
-            btnLoading.classList.toggle("d-none");
-            btnKirim.classList.toggle("d-none");
-            //tampilkan allert
-            myAlert.classList.toggle("d-none");
-            //reset form
-            form.reset();
-            console.log("Success!", response);
-          })
-          .catch((error) => console.error("Error!", error.message));
-      });
-    </script>
-
-    <script>
-      const scriptURL2 =
-        "https://script.google.com/macros/s/AKfycbzNyJLIcw-Tt5RM5FjwrS6CA0HMNMkIAk6ab89JInuuQHKBmSQr3kqOCOneLEyo6iJ0/exec";
-      const form2 = document.forms["form-univ"];
-      const btnKirim2 = document.querySelector(".btn-kirim2");
-      const btnLoading2 = document.querySelector(".btn-loading2");
-      const myAlert2 = document.querySelector(".my-alert2");
-
-      form2.addEventListener("submit", (e) => {
-        e.preventDefault();
-        //ketika tombol submit diklik
-        //tampilkan tombol loading, hilangkan tombol kirim
-        btnLoading2.classList.toggle("d-none");
-        btnKirim2.classList.toggle("d-none");
-
-        fetch(scriptURL2, { method: "POST", body: new FormData(form2) })
-          .then((response) => {
-            //tampilkan tombol kirim, hilangkan tombol loading
-            btnLoading2.classList.toggle("d-none");
-            btnKirim2.classList.toggle("d-none");
-            //tampilkan allert
-            myAlert2.classList.toggle("d-none");
-            //reset form2
-            form2.reset();
-            console.log("Success!", response);
-          })
-          .catch((error) => console.error("Error!", error.message));
-      });
-    </script>
   </body>
 </html>

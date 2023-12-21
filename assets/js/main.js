@@ -272,34 +272,7 @@
     });
   });
 
-  const scriptURL2 =
-    "https://script.google.com/macros/s/AKfycbzNyJLIcw-Tt5RM5FjwrS6CA0HMNMkIAk6ab89JInuuQHKBmSQr3kqOCOneLEyo6iJ0/exec";
-  const form2 = document.forms["form-univ"];
-  const btnKirim2 = document.querySelector(".btn-kirim2");
-  const btnLoading2 = document.querySelector(".btn-loading2");
-  const myAlert2 = document.querySelector(".my-alert2");
-
-  form2.addEventListener("submit", (e) => {
-    e.preventDefault();
-    //ketika tombol submit diklik
-    //tampilkan tombol loading, hilangkan tombol kirim
-    btnLoading2.classList.toggle("d-none");
-    btnKirim2.classList.toggle("d-none");
-
-    fetch(scriptURL2, { method: "POST", body: new FormData(form2) })
-      .then((response) => {
-        //tampilkan tombol kirim, hilangkan tombol loading
-        btnLoading2.classList.toggle("d-none");
-        btnKirim2.classList.toggle("d-none");
-        //tampilkan allert
-        myAlert2.classList.toggle("d-none");
-        //reset form2
-        form2.reset();
-        console.log("Success!", response);
-      })
-      .catch((error) => console.error("Error!", error.message));
-  });
-
+  // Formulir Pesan Pertanyaan
   const scriptURL =
     "https://script.google.com/macros/s/AKfycbyUvGXjxn5_lCRltN8df8hoMQTWnbvBUMxmniFFBz3LeS8rXiVY4Io4PULcxFdguJG4/exec";
   const form = document.forms["form-pesan"];
@@ -307,27 +280,79 @@
   const btnLoading = document.querySelector(".btn-loading");
   const myAlert = document.querySelector(".my-alert");
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    //ketika tombol submit diklik
-    //tampilkan tombol loading, hilangkan tombol kirim
-    btnLoading.classList.toggle("d-none");
-    btnKirim.classList.toggle("d-none");
+  // Optional: Function to close the alert
+  function closeAlert() {
+    myAlert.classList.add("d-none");
+  }
 
-    fetch(scriptURL, { method: "POST", body: new FormData(form) })
-      .then((response) => {
-        //tampilkan tombol kirim, hilangkan tombol loading
-        btnLoading.classList.toggle("d-none");
-        btnKirim.classList.toggle("d-none");
-        //tampilkan allert
-        myAlert.classList.toggle("d-none");
-        //reset form
-        form.reset();
-        console.log("Success!", response);
-      })
-      .catch((error) => console.error("Error!", error.message));
+  document.addEventListener("DOMContentLoaded", function () {
+    // Initially hide the alert
+    myAlert.classList.add("d-none");
   });
 
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    if (validateForm()) {
+      toggleButtons();
+      fetch(scriptURL, { method: "POST", body: new FormData(form) })
+        .then((response) => {
+          toggleButtons();
+          // Show the alert
+          myAlert.classList.remove("d-none");
+          form.reset();
+          console.log("Success!", response);
+        })
+        .catch((error) => console.error("Error!", error.message));
+    }
+  });
+
+  function toggleButtons() {
+    btnLoading.classList.toggle("d-none");
+    btnKirim.classList.toggle("d-none");
+  }
+
+  function validateForm() {
+    let isValid = true;
+    const namaError = document.getElementById("namaError");
+    const emailError = document.getElementById("emailError");
+    const statusError = document.getElementById("statusError");
+    const asalSekolahError = document.getElementById("asalSekolahError");
+    const pesanError = document.getElementById("pesanError");
+
+    // Reset error messages
+    namaError.textContent = "";
+    emailError.textContent = "";
+    statusError.textContent = "";
+    asalSekolahError.textContent = "";
+    pesanError.textContent = "";
+
+    // Validate each field
+    if (form.nama.value.trim() === "") {
+      namaError.textContent = "Nama harus diisi.";
+      isValid = false;
+    }
+    if (form.gmail.value.trim() === "") {
+      emailError.textContent = "Email harus diisi.";
+      isValid = false;
+    }
+    if (form.status_pekerjaan.value === "") {
+      statusError.textContent = "Pilih status pekerjaan.";
+      isValid = false;
+    }
+    if (form.asal_sekolah.value.trim() === "") {
+      asalSekolahError.textContent = "Asal sekolah harus diisi.";
+      isValid = false;
+    }
+    if (form.pesan.value.trim() === "") {
+      pesanError.textContent = "Pesan atau pertanyaan harus diisi.";
+      isValid = false;
+    }
+
+    return isValid;
+  }
+
+  // Slide show
   document.addEventListener("DOMContentLoaded", (event) => {
     var slideIndex = 1;
     showDivs(slideIndex);

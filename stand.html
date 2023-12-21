@@ -58,9 +58,7 @@
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-        <nav id="navbar" class="navbar">
-          <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav>
+        <nav id="navbar" class="navbar"></nav>
         <!-- .navbar -->
       </div>
     </header>
@@ -69,7 +67,7 @@
     <main id="main">
       <!-- ======= Breadcrumbs ======= -->
       <section id="breadcrumbs" class="breadcrumbs">
-        <div class="container">
+        <div class="container mt-3">
           <ol>
             <li><a href="index.html#pendaftaran">Pendaftaran</a></li>
             <li>Open Stand</li>
@@ -88,11 +86,11 @@
             <div class="col-lg-5">
               <div class="portfolio-details-slider swiper">
                 <div class="swiper-wrapper align-items-center">
-                  <div class="swiper-slide" style="max: width 50%">
+                  <div class="swiper-slide">
                     <img src="assets/img/lomba/stand1.png" alt="" />
                   </div>
 
-                  <div class="swiper-slide" style="width: 50%">
+                  <div class="swiper-slide">
                     <img src="assets/img/lomba/stand2.png" alt="" />
                   </div>
                 </div>
@@ -111,7 +109,9 @@
                   <li><strong>Kuota Stand</strong>: Limited Seat</li>
                   <li>
                     <strong>Contact Person</strong>:
-                    <a href="https://wa.me/6285722929578">🔽 CP Stand BEF 🔽 </a>
+                    <a href="https://wa.me/6285722929578"
+                      >🔽 CP Stand BEF 🔽
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -163,7 +163,7 @@
                   type="text"
                   style="width: 100%"
                   name="namauniv"
-                  required
+                  id="namauniv"
                   placeholder="Universitas (Jurusan)"
                 />
                 <input class="btn-kirim2" type="submit" value="Kirim" />
@@ -174,6 +174,7 @@
                   disabled
                 />
               </form>
+              <small class="text-danger" id="namaunivError"></small>
             </div>
           </div>
         </div>
@@ -257,5 +258,8 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/main2.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   </body>
 </html>

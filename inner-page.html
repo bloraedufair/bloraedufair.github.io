@@ -58,9 +58,7 @@
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-        <nav id="navbar" class="navbar">
-          <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav>
+        <nav id="navbar" class="navbar"></nav>
         <!-- .navbar -->
       </div>
     </header>
@@ -69,7 +67,7 @@
     <main id="main">
       <!-- ======= Breadcrumbs ======= -->
       <section id="breadcrumbs" class="breadcrumbs">
-        <div class="container">
+        <div class="container mt-3">
           <ol>
             <li><a href="index.html">Home</a></li>
             <li>Merch</li>
@@ -269,38 +267,6 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", (event) => {
-        var slideIndex = 1;
-        showDivs(slideIndex);
-
-        // Set the interval to 2000 milliseconds (2 seconds)
-        setInterval(function () {
-          plusDivs(1);
-        }, 17000);
-
-        function plusDivs(n) {
-          showDivs((slideIndex += n));
-        }
-
-        window.plusDivs = plusDivs; // This makes the function accessible globally
-
-        function showDivs(n) {
-          var i;
-          var x = document.getElementsByClassName("mySlides");
-          if (n > x.length) {
-            slideIndex = 1;
-          }
-          if (n < 1) {
-            slideIndex = x.length;
-          }
-          for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-          }
-          x[slideIndex - 1].style.display = "block";
-        }
-      });
-    </script>
+    <script src="assets/js/slideinner.js"></script>
   </body>
 </html>

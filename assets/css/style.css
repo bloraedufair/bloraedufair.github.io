@@ -33,6 +33,19 @@ h6 {
   font-family: "Jost", sans-serif;
 }
 
+.blink_me {
+  animation: blinker 2s linear infinite;
+  color: rgb(0, 179, 211);
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
@@ -125,7 +138,7 @@ form[name="form-univ"] input[name="namauniv"] {
 #header .logo {
   font-size: 30px;
   font-family: Geneva;
-  font-weight:bolder;
+  font-weight: bolder;
   margin: 0;
   padding: 0;
   line-height: 1;
